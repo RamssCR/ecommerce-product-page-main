@@ -34,25 +34,21 @@ const checkBtn = document.querySelector('.checkout');
 const prev = document.querySelector('.previous');
 const next = document.querySelector('.next');
 let images = document.querySelector('.gallery-photos');
-let imgCounter = 0;
+let imgCounter = 1;
 let imagesDiv = [`url('./images/image-product-1.jpg')`, `url('./images/image-product-2.jpg')`, `url('./images/image-product-3.jpg')`, `url('./images/image-product-4.jpg')`]
 
 //change image vars (desktop)
-const img1 = document.querySelector('#mg1');
-const img2 = document.querySelector('#mg2');
-const img3 = document.querySelector('#mg3');
-const img4 = document.querySelector('#mg4');
+let thumbnails = document.querySelectorAll('.gallery-t');
+thumbnails = [...thumbnails];
 
 //modal gallery vars
 const mGallery = document.querySelector('.modal');
 const closeMG = document.querySelector('.mg-close');
 const mgprev = document.querySelector('.mg-previous');
 const mgnext = document.querySelector('.mg-next');
-const mImg1 = document.querySelector('#g1');
-const mImg2 = document.querySelector('#g2');
-const mImg3 = document.querySelector('#g3');
-const mImg4 = document.querySelector('#g4');
-const mgGallery = document.querySelector('.mg-photos')
+let mThumbnails = document.querySelectorAll('.mg-t');
+mThumbnails = [...mThumbnails];
+const mgGallery = document.querySelector('.mg-photos');
 
 //events
 
@@ -137,20 +133,10 @@ prev.addEventListener('click', ()=>{
     previous(images);
 })
 
-img1.addEventListener('click', ()=>{
-    changeInDesktop(0, images);
-})
-
-img2.addEventListener('click', ()=>{
-    changeInDesktop(1, images);
-})
-
-img3.addEventListener('click', ()=>{
-    changeInDesktop(2, images);
-})
-
-img4.addEventListener('click', ()=>{
-    changeInDesktop(3, images);
+thumbnails.forEach(thumbnail =>{
+    thumbnail.addEventListener('click', event =>{
+        images.style.backgroundImage = `url('./images/image-product-${event.target.id.slice(-1)}.jpg')`
+    })
 })
 
 /* --------------------------------------------- */
@@ -166,20 +152,10 @@ img4.addEventListener('click', ()=>{
 
 /* --------------------------------------------- */
 
-mImg1.addEventListener('click', ()=>{
-    changeInDesktop(0, mgGallery);
-})
-
-mImg2.addEventListener('click', ()=>{
-    changeInDesktop(1, mgGallery);
-})
-
-mImg3.addEventListener('click', ()=>{
-    changeInDesktop(2, mgGallery);
-})
-
-mImg4.addEventListener('click', ()=>{
-    changeInDesktop(3, mgGallery);
+mThumbnails.forEach(mThumbnail =>{
+    mThumbnail.addEventListener('click', event =>{
+        mgGallery.style.backgroundImage = `url('./images/image-product-${event.target.id.slice(-1)}.jpg')`
+    })
 })
 
 /* --------------------------------------------- */
@@ -197,19 +173,19 @@ mgnext.addEventListener('click', ()=>{
 
 //functions
 function previous(frame) {
-    if (imgCounter !== 0) {
-        imgCounter--    
-        frame.style.backgroundImage = imagesDiv[imgCounter];
+    if (imgCounter == 1) {
+        imgCounter = 4;   
+    } else {
+        imgCounter--
     }
+    frame.style.backgroundImage = `url('./images/image-product-${imgCounter}.jpg')`;
 }
 
 function nextImg(frame) {
-    if (imgCounter !== 3) {
+    if (imgCounter == 4) {
+        imgCounter = 1
+    } else {
         imgCounter++
-        frame.style.backgroundImage = imagesDiv[imgCounter];
     }
-}
-
-function changeInDesktop(i, frame) {
-    frame.style.backgroundImage = imagesDiv[i];
+    frame.style.backgroundImage = `url('./images/image-product-${imgCounter}.jpg')`;
 }

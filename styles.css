@@ -509,12 +509,13 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7333333333);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 3;
+    z-index: 2;
+    padding-bottom: 30px;
   }
 }
 .modal .modal-gallery {
