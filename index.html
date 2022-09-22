@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <main class="main-container">
+
+    <header class="header">
+      
+      <div class="flex-one">
+        <img src="./images/icon-menu.svg" alt="hamburguer menu" class="menu-icon">
+        <img src="./images/logo.svg" alt="website's logo" class="logo-icon">
+      </div>
+
+      <nav class="navbar">
+        <ul class="items">
+          <li><a href="#" class="link">Collections</a></li>
+          <li><a href="#" class="link">Men</a></li>
+          <li><a href="#" class="link">Women</a></li>
+          <li><a href="#" class="link">About</a></li>
+          <li><a href="#" class="link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- initialize modal navbar -->
+        <div class="modal-navbar">
+          
+          <nav class="mn-navbar">
+            <img src="./images/icon-close.svg" class="close-icon-mn" alt="close icon">
+            <ul class="mn-items">
+              <li><a href="#" class="mn-link">Collections</a></li>
+              <li><a href="#" class="mn-link">Men</a></li>
+              <li><a href="#" class="mn-link">Women</a></li>
+              <li><a href="#" class="mn-link">About</a></li>
+              <li><a href="#" class="mn-link">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      <!-- finish modal navbar -->
+
+      <div class="cart-avatar">
+        <div class="cart">
+          <div class="notification"></div>
+          <img src="./images/icon-cart.svg" alt="cart icon" class="cart1">
+        </div>
+
+        <img src="./images/image-avatar.png" alt="avatar icon" class="avatar">
+      </div>
+    </header>
+
+
+    <!-- main content -->
+    <section class="main-content">
+      <article class="gallery">
+        <div class="gallery-photos">
+          <img src="./images/icon-previous.svg" alt="previous icon" class="previous">
+          <img src="./images/icon-next.svg" alt="next icon" class="next">
+        </div>
+
+        <div class="gallery-thumbnails">
+          <img id="mg1" class="gallery-t" src="./images/image-product-1-thumbnail.jpg" alt="img-th1">
+          <img id="mg2" class="gallery-t" src="./images/image-product-2-thumbnail.jpg" alt="img-th2">
+          <img id="mg3" class="gallery-t" src="./images/image-product-3-thumbnail.jpg" alt="img-th3">
+          <img id="mg4" class="gallery-t" src="./images/image-product-4-thumbnail.jpg" alt="img-th4">
+        </div>
+      </article>
+
+      <article class="details">
+        <span class="subtitle">SNEAKER COMPANY</span>
+        <h1 class="title">Fall Limited Edition Sneakers</h1>
+
+        <p class="main-text">These low-profile sneakers are your perfect casual wear companion. 
+          Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+
+        <div class="product-price">
+          <div class="off-price">
+            <span class="price-value">$125.00</span>
+            <span class="percentage">50%</span>
+          </div>
+
+          <span class="og-price">$250.00</span>
+        </div>
+
+        <div class="flex">
+          <div class="product-amount">
+            <img src="./images/icon-minus.svg" alt="minus icon" class="minus">
+            <div id="amounts">0</div>
+            <img src="./images/icon-plus.svg" alt="plus icon" class="plus">
+          </div>
+
+          <button id="btn-add" class="btn-add"><img src="./images/icon-cart-copy.svg" alt="cart icon"><p>Add to cart</p></button>
+          </div>
+      </article>
+    </section>
+
+    <!-- top cart modal -->
+      <div class="cart-modal">
+        <p class="cm-notification">Cart</p>
+        
+        <div class="checkout-notification">
+
+          <div class="just-alig-text">
+            <h3 class="h3">No items</h3>
+          </div>
+
+          <div class="checkout-details">
+            <div class="img">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="img-th1" class="img1">
+              <div>
+                <p class="product-description">Autumn Limited Edition...</p>
+                <p class="all-products">$125.00 x <span id="amount"></span> <strong><span id="total">$0.00</span></strong></p>
+              </div>
+            </div>
+            <img src="./images/icon-delete.svg" alt="trash bin icon" class="delete">
+          </div>
+          <button class="checkout">Checkout</button>
+        </div>
+      </div>
+    <!-- end cart modal -->
+
+    <!-- top modal gallery -->
+      <div class="modal">
+        <article class="modal-gallery">
+          <div class="x">
+            <img src="./images/icon-close copy.svg" alt="close icon" class="mg-close">
+          </div>
+          <div class="mg-photos">
+            <img src="./images/icon-previous.svg" alt="previous icon" class="mg-previous">
+            <img src="./images/icon-next.svg" alt="next icon" class="mg-next">
+          </div>
+  
+          <div class="mg-thumbnails">
+            <img id="g1" class="mg-t" src="./images/image-product-1-thumbnail.jpg" alt="img-th1">
+            <img id="g2" class="mg-t" src="./images/image-product-2-thumbnail.jpg" alt="img-th2">
+            <img id="g3" class="mg-t" src="./images/image-product-3-thumbnail.jpg" alt="img-th3">
+            <img id="g4" class="mg-t" src="./images/image-product-4-thumbnail.jpg" alt="img-th4">
+          </div>
+        </article>
+      </div>
+    <!-- end modal gallery -->
+  </main>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Ramsés Pérez</a>.
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>

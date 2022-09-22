@@ -1,0 +1,48 @@
+@use 'variables';
+@use 'mixins';
+
+.modal-navbar{
+    @include mixins.modalBackground;
+
+    .mn-navbar{
+        background-color: variables.$white;
+        width: 250px;
+        padding: 28px 24px;
+        height: 100%;
+
+        .mn-items{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 40px;
+
+            .mn-link{
+                font-family: variables.$fontFamily;
+                text-decoration: none;
+                color: variables.$black;
+                font-weight: 700;
+                font-size: 1.1em;
+
+                &:hover{
+                    color: variables.$orange;
+                }
+            }
+        }
+    }
+
+    .close-icon-mn:hover{
+        cursor: pointer;
+        animation: rotates 900ms infinite linear;
+    }
+
+    @keyframes rotates {
+        0%{
+            transform: rotate(0deg);
+        }
+
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+
+}

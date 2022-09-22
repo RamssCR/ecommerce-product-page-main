@@ -1,0 +1,78 @@
+@use 'variables' as v;
+@use 'mixins';
+
+.details{
+    padding: 28px 24px;
+
+    @media only screen and (min-width: 1115px){
+        padding-top: 60px;
+    }
+
+    .subtitle{
+        color: v.$orange;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 0.8em;
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    .title{
+        font-size: 1.7em;
+        margin-bottom: 17px;
+
+        @media only screen and (min-width: 1115px){
+            font-size: 2.6em;
+            margin-bottom: 32px;
+        }
+    }
+
+    .main-text{
+        font-size: 0.94em;
+        color: v.$darkGrayishBlue;
+        line-height: 24px;
+        margin-bottom: 24px;
+    }
+
+    .product-price{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+
+        @media only screen and (min-width: 1115px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 5px;
+        }
+
+        .off-price{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            .price-value{
+                font-size: v.$pFontSize * 1.8;
+                font-weight: 700;
+            }
+
+            .percentage{
+                display: inline-block;
+                color: v.$orange;
+                font-weight: 700;
+                font-size: 0.8em;
+                background-color: v.$paleOrange;
+                padding: 4px 6px;
+                border-radius: 5px;
+            }
+        }
+
+        .og-price{
+            color: v.$grayishBlue;
+            font-weight: 700;
+            font-size: 0.9em;
+            text-decoration: line-through;
+        }
+    }
+}

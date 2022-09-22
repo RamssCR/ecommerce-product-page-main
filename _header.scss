@@ -1,0 +1,90 @@
+@use 'variables';
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 24px;
+    overflow: hidden;
+    
+    @media only screen and (min-width: 1115px) {
+        height: 114px;
+        border-bottom: 1px solid variables.$grayishBlue;
+    }
+
+    .flex-one{
+        width: 173px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media only screen and (min-width: 1115px){
+            width: 90px;
+        }
+
+        .menu-icon{
+            &:hover{
+                cursor: pointer;
+            }
+
+            @media only screen and (min-width: 1115px){
+                display: none;
+            }
+        }
+    }
+
+    .cart-avatar{
+        display: flex;
+        align-items: center;
+        width: 70px;
+        justify-content: space-between;
+
+        @media only screen and (min-width: 1115px){
+            width: 120px;
+        }
+
+        .cart{
+            position: relative;
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            .notification{
+                background-color: variables.$orange;
+                text-align: center;
+                border-radius: 20px;
+                color: variables.$white;
+                padding: 3px 8px;
+                font-weight: 700;
+                font-size: 8px;
+                position: absolute;
+                top: -11px;
+                left: 12px;
+                display: none;
+
+                &:hover{
+                    cursor: pointer;
+                    background-color: variables.$darkOrange;
+                }
+            }
+        }
+
+        .avatar{
+            width: 32px;
+            border: 1px solid transparent;
+
+            &:hover{
+                cursor: pointer;
+                border: 1px solid variables.$orange;
+                border-radius: 50%;
+            }
+
+            @media only screen and (min-width: 1115px){
+                width: 48px;
+            }
+        }
+    }
+}

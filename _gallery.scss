@@ -1,0 +1,114 @@
+@use 'variables';
+@use 'mixins';
+
+.gallery{
+    .gallery-photos{
+        background-image: url(./images/image-product-1.jpg);
+        height: 300px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+
+        .previous{
+            @include mixins.cursors;
+
+            @media only screen and (min-width: 1115px){
+                display: none;
+            }
+            
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+
+        .next{
+            @include mixins.cursors;
+
+            @media only screen and (min-width: 1115px){
+                display: none;
+            }
+
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+
+        @media only screen and (min-width: 1115px){
+            height: 26em;
+            border-radius: 13px;
+            margin-bottom: 17px;
+            transition: 300ms all ease;
+
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.03);
+            }
+        }
+    }
+
+    .gallery-thumbnails{
+        display: none;
+
+        @media only screen and (min-width: 1115px){
+            display: flex;
+            justify-content: space-between;
+
+            img{
+                width: 80px;
+                height: 80px;
+                border-radius: 9px;
+                transition: 300ms all ease;
+
+                &:hover{
+                    cursor: pointer;
+                    border: 1px solid variables.$orange;
+                    animation: rotatios 1s ease-in-out;
+                }
+            }
+
+            @keyframes rotatios {
+                40%{
+                    transform: scale(1.1);
+                }
+
+                45%{
+                    transform: rotate(15deg);
+                }
+
+                50%{
+                    transform: rotate(-15deg);
+                }
+
+                55%{
+                    transform: rotate(15deg);
+                }
+
+                60%{
+                    transform: rotate(-15deg);
+                }
+
+                65%{
+                    transform: rotate(15deg);
+                }
+
+                70%{
+                    transform: rotate(-15deg);
+                }
+
+                100%{
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1115px){
+        width: 65em;
+    }
+}

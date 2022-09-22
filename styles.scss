@@ -1,0 +1,58 @@
+@use 'initial';
+@use 'variables';
+@use 'header';
+@use 'navbar';
+@use 'mn-navbar';
+@use 'gallery';
+@use 'details';
+@use 'input';
+@use 'mc-cart';
+@use 'mg-gallery';
+
+.main-container{
+    width: 375px;
+    margin: auto;
+    position: relative;
+
+    @media only screen and (min-width: 1115px) {
+        width: 1115px;
+    }
+}
+
+.main-content{
+    @media only screen and (min-width: 1115px) {
+        display: flex;
+        padding: 90px 50px;
+        gap: 110px;
+    }
+}
+
+
+.attribution{
+    text-align: center;
+    color: variables.$darkGrayishBlue;
+    font-size: 0.9em;
+    padding: 20px 0 10px 0;
+
+    a{
+        font-size: variables.$pFontSize;
+        color: variables.$orange;
+        transition: 300ms all ease;
+        font-family: variables.$fontFamily;
+        text-decoration: none;
+        display: inline-block;
+
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+
+.block{
+    display: block;
+}
+
+.flex2{
+    display: flex;
+}
